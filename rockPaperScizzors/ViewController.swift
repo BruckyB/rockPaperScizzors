@@ -7,12 +7,14 @@
 
 import UIKit
 
-
+//class
 class DataTransfer{
     static var currentScore = 0
     static var computerChoice : Int!
     static var nameAndAge : (String,Int)!
+    static var darkMode = false
 }
+
 
 
 class ViewController: UIViewController {
@@ -32,53 +34,61 @@ class ViewController: UIViewController {
         
         
         
-        if let items = UserDefaults.standard.data(forKey: "score") {
-            let decoder = JSONDecoder()
-            if let decoded = try? decoder.decode(Int.self, from: items){
-                DataTransfer.currentScore = decoded
-            }
-        }
         
         
         
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(DataTransfer.currentScore){
-            UserDefaults.standard.set(encoded, forKey: "score")
-        }
+        
+        
+        //save data
+        let s = UserDefaults.standard.integer(forKey: "score")
+        DataTransfer.currentScore = s
+            print(s)
+            
+//        }
+        
+        pointLabel.text = "\(DataTransfer.currentScore)"
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         pointLabel.text = String(DataTransfer.currentScore)
+        //function
+        save()
     }
     
     @IBAction func switchAction(_ sender: UISwitch) {
         if switchOut.isOn == true {
-            dark = true
+            DataTransfer.darkMode = true
             view.backgroundColor = UIColor.black
             chooseLabel.textColor = UIColor.white
             darkLabel.textColor = UIColor.white
             winLossOutlet.textColor = UIColor.white
             pointLabel.textColor = UIColor.white
+            nameLabel.textColor = UIColor.white
+            ageLabel.textColor = UIColor.white
         } else {
-            dark = false
+            DataTransfer.darkMode = false
             chooseLabel.textColor = UIColor.black
             view.backgroundColor = UIColor.white
             darkLabel.textColor = UIColor.black
             winLossOutlet.textColor = UIColor.black
             pointLabel.textColor = UIColor.black
+            nameLabel.textColor = UIColor.black
+            ageLabel.textColor = UIColor.black
         }
     }
     
     
     @IBAction func rockButton(_ sender: Any) {
         DataTransfer.computerChoice = Int.random(in: 0...2)
-        
+            
         performSegue(withIdentifier: "segueToRock", sender: nil)
     }
     
     @IBAction func paperButton(_ sender: Any) {
         DataTransfer.computerChoice = Int.random(in: 0...2)
+        
         
         performSegue(withIdentifier: "segueToPaper", sender: nil)
     }
@@ -86,11 +96,12 @@ class ViewController: UIViewController {
     @IBAction func scissorsButton(_ sender: Any) {
         DataTransfer.computerChoice = Int.random(in: 0...2)
         
+        
         performSegue(withIdentifier: "segueToScissors", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        //if else
         if segue.identifier == "segueToRock" {
             let nvc = segue.destination as! ViewController2
 
@@ -103,11 +114,20 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func addNAAButton(_ sender: Any) {
+        //Tuple
         DataTransfer.nameAndAge = (nameField.text!,Int(ageField.text!)!)
         
         nameLabel.text = DataTransfer.nameAndAge.0
         ageLabel.text = "\(DataTransfer.nameAndAge.1)"
     }
+    
+    func save() {
+        //function
+        UserDefaults.standard.set(DataTransfer.currentScore, forKey: "score")
+        print("saved")
+        print(DataTransfer.currentScore)
+    }
+    
     
     @IBAction func unwind(_ seg: UIStoryboardSegue){
     }

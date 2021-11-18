@@ -35,7 +35,15 @@ class ViewController4: UIViewController {
             print("hehehehe")
         }
         
-        
+        if DataTransfer.darkMode == true {
+        view.backgroundColor = UIColor.black
+            textView.textColor = UIColor.white
+            textView.backgroundColor = UIColor.black
+        } else {
+            view.backgroundColor = UIColor.white
+            textView.textColor = UIColor.black
+            textView.backgroundColor = UIColor.white
+        }
         
     }
     

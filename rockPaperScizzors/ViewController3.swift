@@ -14,7 +14,7 @@ class ViewController3: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    //tap gesture recognizer
     @IBAction func tapPaper(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "segueHidden", sender: nil)
     }
@@ -35,7 +35,15 @@ class ViewController3: UIViewController {
         default:
             print("hehehehe")
         }
-        
+        if DataTransfer.darkMode == true {
+            view.backgroundColor = UIColor.black
+            textView.textColor = UIColor.white
+            textView.backgroundColor = UIColor.black
+        } else {
+            view.backgroundColor = UIColor.white
+            textView.textColor = UIColor.black
+            textView.backgroundColor = UIColor.white
+        }
     }
     
     

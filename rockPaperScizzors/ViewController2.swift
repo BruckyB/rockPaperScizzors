@@ -15,7 +15,7 @@ class ViewController2: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        //switch
         switch DataTransfer.computerChoice {
         case 0:
             textView.text = "You tied! The computer chose rock, and you chose rock."
@@ -28,14 +28,27 @@ class ViewController2: UIViewController {
         default:
             print("hehehehe")
         }
-        
+        if DataTransfer.darkMode == true {
+        view.backgroundColor = UIColor.black
+            textView.textColor = UIColor.white
+            textView.backgroundColor = UIColor.black
+        } else {
+            view.backgroundColor = UIColor.white
+            textView.textColor = UIColor.black
+            textView.backgroundColor = UIColor.white
+        }
     }
 
     
     
     
+    @IBAction func button(_ sender: Any) {
+        performSegue(withIdentifier: "awesomeSegue", sender: nil)
+    }
     
-    
+    @IBAction func unwind(_ seg: UIStoryboardSegue){
+        
+    }
     
 
 }

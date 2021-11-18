@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65001F7C2743ED6D006585B1 /* ViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65001F7B2743ED6D006585B1 /* ViewController7.swift */; };
 		657C63F327396831004EC342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C63F227396831004EC342 /* AppDelegate.swift */; };
 		657C63F527396831004EC342 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C63F427396831004EC342 /* SceneDelegate.swift */; };
 		657C63F727396831004EC342 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C63F627396831004EC342 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65001F7B2743ED6D006585B1 /* ViewController7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController7.swift; sourceTree = "<group>"; };
 		657C63EF27396831004EC342 /* rockPaperScizzors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rockPaperScizzors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657C63F227396831004EC342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657C63F427396831004EC342 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				657C640D27396D1F004EC342 /* ViewController4.swift */,
 				65B1E4A0273AB16B00BB7CE4 /* ViewController5.swift */,
 				65DCB2DF273D54CC0028B0C7 /* ViewController6.swift */,
+				65001F7B2743ED6D006585B1 /* ViewController7.swift */,
 				657C63F827396831004EC342 /* Main.storyboard */,
 				657C63FE27396833004EC342 /* Assets.xcassets */,
 				657C640027396833004EC342 /* LaunchScreen.storyboard */,
@@ -164,6 +167,7 @@
 				657C63F727396831004EC342 /* ViewController.swift in Sources */,
 				65DCB2E0273D54CC0028B0C7 /* ViewController6.swift in Sources */,
 				657C63F327396831004EC342 /* AppDelegate.swift in Sources */,
+				65001F7C2743ED6D006585B1 /* ViewController7.swift in Sources */,
 				657C63F527396831004EC342 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
